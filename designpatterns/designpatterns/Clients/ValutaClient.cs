@@ -22,7 +22,7 @@ namespace designpatterns
         {
             using (WebClient client = new WebClient())
             {
-                string json = client.DownloadString("https://api.coinmarketcap.com/v1/ticker/");
+                string json = client.DownloadString("");
             }
         }
     }

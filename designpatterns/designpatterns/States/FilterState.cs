@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace designpatterns
 {
-    class FilterState
+    class FilterState : AbstractMainState
     {
+        public override void Handle(Form1 context)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

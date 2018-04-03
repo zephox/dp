@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace designpatterns
+﻿namespace designpatterns
 {
     interface Valuta
     {
-        void getBase();
+        string getBase();
     }
 }

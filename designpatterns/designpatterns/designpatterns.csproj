@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -58,7 +58,7 @@
     <Compile Include="Models\CoinData.cs" />
     <Compile Include="States\CompareState.cs" />
     <Compile Include="Converters\Converter.cs" />
-    <Compile Include="CurrentValutaRate.cs" />
+    <Compile Include="Models\CurrentValutaRate.cs" />
     <Compile Include="Converters\EuroConverter.cs" />
     <Compile Include="States\FilterState.cs" />
     <Compile Include="Form1.cs">
@@ -85,7 +85,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

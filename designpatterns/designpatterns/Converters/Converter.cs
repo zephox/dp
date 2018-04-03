@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace designpatterns
 {
-    class Converter
+    abstract class Converter
     {
-
+        protected CoinData Coin;
+        public CoinData CoinData
+        {
+            get { return Coin; }
+        }
+        public abstract void update();
+        public abstract void convert(string @base);
     }
 }

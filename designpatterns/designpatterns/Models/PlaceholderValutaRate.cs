@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace designpatterns
 {
-    class PlaceholderValutaRate
+    class PlaceholderValutaRate : Valuta
     {
+       public string getBase()
+        {
+            return "1.23";
+        }
     }
 }

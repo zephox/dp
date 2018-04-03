@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace designpatterns
 {
-    class SortState
+    class SortState : AbstractMainState
     {
+        public override void Handle(Form1 context)
+        {
+            
+        }
     }
 }

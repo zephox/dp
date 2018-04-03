@@ -1,9 +1,15 @@
-﻿using Json = Newtonsoft.Json.JsonPropertyAttribute;
+﻿using System;
+using Json = Newtonsoft.Json.JsonPropertyAttribute;
 
 namespace designpatterns
 {
-    class CurrentValutaRate
+    class CurrentValutaRate : Valuta
     {
+        public string getBase()
+        {
+            return "";
+        }
+
         public partial class Currency
         {
             [Json("success")]

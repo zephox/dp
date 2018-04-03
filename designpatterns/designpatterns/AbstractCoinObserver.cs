@@ -8,5 +8,6 @@ namespace designpatterns
 {
     class AbstractCoinObserver
     {
+
     }
 }
