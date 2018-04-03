@@ -19,7 +19,8 @@ namespace designpatterns
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CoinClient C = new CoinClient(this);
+            CoinClient CC = new CoinClient(this);
+            ValutaClient VC = new ValutaClient(this);
             Converter converter;
 
             converter = new EuroConverter();

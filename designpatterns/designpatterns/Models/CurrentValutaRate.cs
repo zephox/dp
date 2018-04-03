@@ -7,7 +7,7 @@ namespace designpatterns
     {
         public string getBase()
         {
-            return "";
+            return "insert data here";
         }
 
         public partial class Currency

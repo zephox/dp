@@ -8,9 +8,11 @@ namespace designpatterns
 {
     class PlaceholderValutaRate : Valuta
     {
+       private CurrentValutaRate cvr = new CurrentValutaRate();
+
        public string getBase()
         {
-            return "1.23";
+            return cvr.getBase();
         }
     }
 }

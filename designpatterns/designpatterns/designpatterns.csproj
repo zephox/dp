@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="AbstractCoinObserver.cs" />
     <Compile Include="AbstractConverterBuilder.cs" />
+    <Compile Include="Models\PlaceholderValutaRate.cs" />
     <Compile Include="States\AbstractMainState.cs" />
     <Compile Include="Converters\CanadianDollarConverter.cs" />
     <Compile Include="Clients\CoinClient.cs" />
@@ -67,7 +68,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlaceholderValutaRate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="States\SortState.cs" />
