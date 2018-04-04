@@ -10,7 +10,7 @@ namespace designpatterns
     {
         public override void Handle(Form1 context)
         {
-            
+            context.setLabelText("state - Sort");
         }
     }
 }

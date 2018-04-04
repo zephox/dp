@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +11,12 @@ namespace designpatterns
     {
         public override void convert(string @base)
         {
-            CoinData.PriceUsd = 11232.ToString();
+            
         }
 
         public override void update()
-        {      
-             
+        {
+            Debug.WriteLine("converted from canadian dollar");
         }
     }
 }

@@ -8,8 +8,8 @@ namespace designpatterns
 {
     abstract class Converter
     {
-        protected CoinData Coin;
-        public CoinData CoinData
+        protected List<CoinData> Coin = new List<designpatterns.CoinData>();
+        public List<CoinData> CoinData
         {
             get { return Coin; }
         }

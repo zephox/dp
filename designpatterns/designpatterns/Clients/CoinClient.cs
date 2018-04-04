@@ -1,7 +1,9 @@
 ﻿using System.Timers;
 using Newtonsoft.Json;
 using System.Net;
+using System;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace designpatterns
 {
@@ -9,6 +11,19 @@ namespace designpatterns
     {
         private System.Timers.Timer timer;
         public Form1 form;
+        private List<AbstractCoinObserver> observers = new List<AbstractCoinObserver>();
+
+        public void register(AbstractCoinObserver ACO)
+        {
+            observers.Add(ACO);
+        }
+        public void notify()
+        {
+            foreach (AbstractCoinObserver observer in observers)
+            {
+                observer.update();
+            }
+        }
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             getCoinData();
@@ -29,6 +44,7 @@ namespace designpatterns
                 string json = client.DownloadString("https://api.coinmarketcap.com/v1/ticker/");
                 CoinData[] coins = JsonConvert.DeserializeObject<CoinData[]>(json);
                 form.doshit(coins);
+                this.notify();
             }
         }
     }

@@ -10,12 +10,16 @@ namespace designpatterns
     {
         public override void convert(string @base)
         {
-            CoinData.PriceUsd = 12.ToString();
+           
         }
 
         public override void update()
         {
-            
+            foreach (CoinData CD in Coin)
+            {
+                CD.PriceUsd = (double.Parse(CD.PriceUsd) * 0.815228468).ToString();
+                
+            }
         }
     }
 }

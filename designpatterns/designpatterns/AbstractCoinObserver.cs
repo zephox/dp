@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace designpatterns
 {
-    class AbstractCoinObserver
+    interface AbstractCoinObserver
     {
-
+        void update();
     }
 }

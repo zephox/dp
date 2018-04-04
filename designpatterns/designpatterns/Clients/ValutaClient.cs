@@ -12,7 +12,7 @@ namespace designpatterns
         {
             using (WebClient client = new WebClient())
             {
-                string json = client.DownloadString("");
+               // string json = client.DownloadString("");
             }
         }
         public ValutaClient(Form1 form1)

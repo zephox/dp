@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace designpatterns
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, AbstractCoinObserver
     {
         public List<CoinData> coins;
         private AbstractMainState state;
@@ -20,15 +21,7 @@ namespace designpatterns
         private void Form1_Load(object sender, EventArgs e)
         {
             CoinClient CC = new CoinClient(this);
-            ValutaClient VC = new ValutaClient(this);
-            Converter converter;
-
-            converter = new EuroConverter();
-            converter.update();
-
-            converter = new CanadianDollarConverter();
-            converter.update();
-
+            CC.register(this);
         }
         public void doshit(CoinData[] coins)
         {
@@ -42,11 +35,32 @@ namespace designpatterns
         private void button1_Click(object sender, EventArgs e)
         {
             state = new SortState();
+            state.Handle(this);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             state = new FilterState();
+            state.Handle(this);
+        }
+        public void setLabelText(string text)
+        {
+            label1.Text = text;
+        }
+
+        public void update()
+        {
+            Debug.WriteLine("data changed");
+            listBox1.Items.Clear();
+
+            Converter converter;
+            converter = new EuroConverter();//builder
+            converter.update();
+
+            foreach (CoinData c in coins)
+            {
+                listBox1.Items.Add(c.Name + " - " + c.PriceUsd);
+            }
         }
     }
 }
