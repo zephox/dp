@@ -21,9 +21,10 @@ namespace designpatterns
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CoinClient CC = new CoinClient(this);
+            CoinClient CC = new CoinClient(this);//observer 
             CC.register(this);
         }
+
         public void doWork(CoinData[] coins)
         {
             this.coins.Clear();   

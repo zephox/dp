@@ -14,6 +14,7 @@ namespace designpatterns
             foreach (CoinData coin in CoinData)
             {
                 coin.PriceUsd = (double.Parse(coin.PriceUsd) * 0.86).ToString();
+                
             }
         }
     }

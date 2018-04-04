@@ -9,6 +9,12 @@ namespace designpatterns
     abstract class Converter
     {
         protected List<CoinData> Coin = new List<CoinData>();
+        protected CurrentValutaRate cvr;
+        public CurrentValutaRate currentValueRate
+        {
+            get { return cvr; }
+            set { cvr = value; }
+        }
         public List<CoinData> CoinData
         {
             get { return Coin; }

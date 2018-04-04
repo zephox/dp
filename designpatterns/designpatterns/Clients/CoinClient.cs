@@ -9,7 +9,7 @@ namespace designpatterns
 {
     class CoinClient
     {
-        private System.Timers.Timer timer;
+        private Timer timer;
         public Form1 form;
         private List<ICoinObserver> observers = new List<ICoinObserver>();
 
@@ -34,7 +34,7 @@ namespace designpatterns
         public CoinClient(Form1 f)
         {
             this.form = f;
-            timer = new System.Timers.Timer();
+            timer = new Timer();
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             timer.Interval = 10000;
             timer.Enabled = true;
