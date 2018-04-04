@@ -11,12 +11,14 @@ namespace designpatterns
     {
         private Timer timer;
         public Form1 form;
+
         private List<ICoinObserver> observers = new List<ICoinObserver>();
 
         public void register(ICoinObserver ACO)
         {
             observers.Add(ACO);
         }
+
         public void notify()
         {
             foreach (ICoinObserver observer in observers)
@@ -26,11 +28,13 @@ namespace designpatterns
         }
 
 
+
         //timertje voor api
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             getCoinData();
         }
+
         public CoinClient(Form1 f)
         {
             this.form = f;
@@ -40,6 +44,7 @@ namespace designpatterns
             timer.Enabled = true;
             timer.Start();
         }
+
         public void getCoinData()
         {
             using (WebClient client = new WebClient())

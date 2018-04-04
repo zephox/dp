@@ -11,7 +11,10 @@ namespace designpatterns
     {
         public override void update()
         {
-            Debug.WriteLine("converted from canadian dollar");
+            foreach (CoinData coin in CoinData)
+            {
+                coin.PriceUsd = (double.Parse(coin.PriceUsd) * currentValueRate.canadiandDollarRate).ToString();
+            }
         }
     }
 }

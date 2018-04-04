@@ -50,6 +50,15 @@ namespace designpatterns
             label1.Text = text;
         }
 
+        public void refreshList()
+        {
+            listBox1.Items.Clear();
+            foreach (CoinData c in coins)
+            {
+                listBox1.Items.Add(c.Name + " - " + c.PriceUsd);
+            }
+        }
+
         public void update()
         {
             Debug.WriteLine("data changed");
@@ -58,10 +67,11 @@ namespace designpatterns
             Converter converter;
             converter = new EuroConverter();//builder
             converter.CoinData = coins;
+            converter.currentValueRate = new CurrentValutaRate();
             converter.update();
 
             coins = converter.CoinData;
-
+            state.Handle(this);
             foreach (CoinData c in coins)
             {
                 listBox1.Items.Add(c.Name + " - " + c.PriceUsd);
