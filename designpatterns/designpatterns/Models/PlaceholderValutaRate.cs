@@ -16,11 +16,11 @@ namespace designpatterns
             if(cvr == null)
             {
                 cvr = new CurrentValutaRate();
-                return cvr.getBase();
+                return cvr.request();
             }
             else
             {
-                return cvr.getBase();
+                return cvr.request();
             }
         }
     }
