@@ -5,7 +5,7 @@ namespace designpatterns
 {
     class CurrentValutaRate : Valuta
     {
-        public string getBase()
+        public string request()
         {
             return "insert data here";
         }

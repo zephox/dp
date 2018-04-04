@@ -2,6 +2,6 @@
 {
     interface Valuta
     {
-        string getBase();
+        string request();
     }
 }
