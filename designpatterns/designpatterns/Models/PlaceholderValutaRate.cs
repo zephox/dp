@@ -11,16 +11,16 @@ namespace designpatterns
         private CurrentValutaRate cvr;
        
 
-        public string request()
+        public CurrentValutaRate request()
         {
             if(cvr == null)
             {
                 cvr = new CurrentValutaRate();
-                return cvr.getBase();
+                return cvr.request();
             }
             else
             {
-                return cvr.getBase();
+                return cvr.request();
             }
         }
     }
