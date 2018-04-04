@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace designpatterns
 {
-    interface AbstractCoinObserver
+    interface ICoinObserver
     {
         void update();
     }

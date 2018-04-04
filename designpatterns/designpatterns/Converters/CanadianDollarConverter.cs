@@ -9,11 +9,6 @@ namespace designpatterns
 {
     class CanadianDollarConverter : Converter
     {
-        public override void convert(string @base)
-        {
-            
-        }
-
         public override void update()
         {
             Debug.WriteLine("converted from canadian dollar");

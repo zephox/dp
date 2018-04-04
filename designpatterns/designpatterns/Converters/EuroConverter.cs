@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,17 +9,11 @@ namespace designpatterns
 {
     class EuroConverter : Converter
     {
-        public override void convert(string @base)
-        {
-           
-        }
-
         public override void update()
         {
-            foreach (CoinData CD in Coin)
+            foreach (CoinData coin in CoinData)
             {
-                CD.PriceUsd = (double.Parse(CD.PriceUsd) * 0.815228468).ToString();
-                
+                coin.PriceUsd = (double.Parse(coin.PriceUsd) * 0.86).ToString();
             }
         }
     }

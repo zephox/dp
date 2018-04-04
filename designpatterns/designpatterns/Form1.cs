@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace designpatterns
 {
-    public partial class Form1 : Form, AbstractCoinObserver
+    public partial class Form1 : Form, ICoinObserver
     {
         public List<CoinData> coins;
         private AbstractMainState state;
@@ -15,15 +15,16 @@ namespace designpatterns
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
             coins = new List<CoinData>();
+            //standaard state
             state = new SortState();
-        }
+        }   
 
         private void Form1_Load(object sender, EventArgs e)
         {
             CoinClient CC = new CoinClient(this);
             CC.register(this);
         }
-        public void doshit(CoinData[] coins)
+        public void doWork(CoinData[] coins)
         {
             this.coins.Clear();   
             foreach (CoinData c in coins)
@@ -55,7 +56,10 @@ namespace designpatterns
 
             Converter converter;
             converter = new EuroConverter();//builder
+            converter.CoinData = coins;
             converter.update();
+
+            coins = converter.CoinData;
 
             foreach (CoinData c in coins)
             {

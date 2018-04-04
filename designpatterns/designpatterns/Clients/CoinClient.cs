@@ -11,19 +11,22 @@ namespace designpatterns
     {
         private System.Timers.Timer timer;
         public Form1 form;
-        private List<AbstractCoinObserver> observers = new List<AbstractCoinObserver>();
+        private List<ICoinObserver> observers = new List<ICoinObserver>();
 
-        public void register(AbstractCoinObserver ACO)
+        public void register(ICoinObserver ACO)
         {
             observers.Add(ACO);
         }
         public void notify()
         {
-            foreach (AbstractCoinObserver observer in observers)
+            foreach (ICoinObserver observer in observers)
             {
                 observer.update();
             }
         }
+
+
+        //timertje voor api
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             getCoinData();
@@ -43,7 +46,7 @@ namespace designpatterns
             {
                 string json = client.DownloadString("https://api.coinmarketcap.com/v1/ticker/");
                 CoinData[] coins = JsonConvert.DeserializeObject<CoinData[]>(json);
-                form.doshit(coins);
+                form.doWork(coins);
                 this.notify();
             }
         }

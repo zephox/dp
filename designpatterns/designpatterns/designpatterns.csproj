@@ -50,8 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractCoinObserver.cs" />
-    <Compile Include="AbstractConverterBuilder.cs" />
+    <Compile Include="ICoinObserver.cs" />
     <Compile Include="Models\PlaceholderValutaRate.cs" />
     <Compile Include="States\AbstractMainState.cs" />
     <Compile Include="Converters\CanadianDollarConverter.cs" />
@@ -85,6 +84,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
