@@ -2,6 +2,6 @@
 {
     interface Valuta
     {
-        string request();
+        CurrentValutaRate request();
     }
 }

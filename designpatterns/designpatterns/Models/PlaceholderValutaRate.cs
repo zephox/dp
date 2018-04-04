@@ -11,7 +11,7 @@ namespace designpatterns
         private CurrentValutaRate cvr;
        
 
-        public string request()
+        public CurrentValutaRate request()
         {
             if(cvr == null)
             {
